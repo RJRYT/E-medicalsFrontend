@@ -1,38 +1,219 @@
-.App {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  overflow: hidden;
+}
+
+nav a {
+  float: right;
+  display: block;
+  color: dimgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#head {
+  width: 1300px;
+  height: 67px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #f8f8f8;
+  background: #fafafa;
+  box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.09);
+  margin-top: 48px;
+  margin-right: 59px;
+  color: var(--1f1534-hyfen, #1f1534);
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#icon {
+  width: 118px;
+  height: 87px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f190d9 0%, #d939cd 100%);
+  position: absolute;
+  margin-top: px;
+  margin-left: 78px;
+}
+#icon1 {
+  color: #fff;
+  font-family: Haettenschweiler;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 10;
+  top: 10;
+  right: 23;
+  bottom: 23;
+  position: relative;
+  margin-left: 9px;
+}
+#icon2 {
+  color: #fff;
+  font-family: Mulish;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: lowercase;
+  position: relative;
+  margin-left: 72px;
+}
+#virtualHealth {
+  position: relative;
+  margin-top: 100px;
+}
+
+#vhContent {
+  color: #000;
+  font-family: Mulish;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 116.667% */
+  position: relative;
+  margin-top: 200px;
+
+  width: 500px;
+}
+p {
+  color: #7d7987;
+  font-family: Mulish;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px; /* 152.381% */
+  text-align: none;
+}
+#vhbutt {
+  width: 200px;
+  /* height: 56px; */
+  flex-shrink: 0;
+  border-radius: 55px;
+  background: linear-gradient(135deg, #f6ceec 0%, #d939cd 100%);
+  color: #fff;
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 333.333% */
+}
+#vhimg {
+  width: 693px;
+  height: 598px;
+  flex-shrink: 0;
+  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 100px;
+}
+#service {
+  color: #000;
+  font-family: Mulish;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 155.556% */
+  margin-top: 150px;
+  margin-left: 50px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#pser {
+  color: #7d7987;
+  text-align: center;
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px; /* 166.667% */
+  position: relative;
+  margin-top: 100;
 }
+#finddoc {
+  width: 50px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fff;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  /* drop shadow */
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
 }
+#findmed {
+  width: 50px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fff;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* drop shadow */
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+}
+#sixdiv {
+  background-image: url(./Assets/Vector.png);
+  background-repeat: no-repeat;
+  margin-top: 100px;
+}
+#eachdiv {
+  border-radius: 20px;
+  background: #fff;
+  padding: 30px 40px;
+
+  /* drop shadow */
+  box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+}
+.button {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.centered-button {
+  /* Additional styling for the button if needed */
+  /* padding: 10px 20px; */
+  width: 200px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 55px;
+  background: linear-gradient(135deg, #f6ceec 0%, #d939cd 100%);
+  color: #fff;
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 333.333% */
+  text-align: center;
+}
+#carose {
+  width: 229px;
+  height: 315.344px;
+  flex-shrink: 0;
+}
+footer {
+  background: linear-gradient(135deg, #72edf2 0%, #5151e5 100%);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 155.556% */
+  margin-top: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-section {
+  flex: 1;
+  margin: 0 10px; /* Adjust margin as needed */
 }
