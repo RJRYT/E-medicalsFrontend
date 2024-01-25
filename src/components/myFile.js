@@ -8,7 +8,8 @@ import img6 from '../Assets/Frame(6).png'
 import img7 from '../Assets/Frame.png'
 import img8 from '../Assets/trafalgar-illustration sec02 1.png'
 import img9 from '../Assets/trafalgar-illustration sec03 1.png'
-
+import { Link } from "react-router-dom";
+ 
 
 function MyFile() {
   return (
@@ -18,12 +19,10 @@ function MyFile() {
           <div id="icon1">Emed</div>
           <div id="icon2">ical</div>
         </div>
-        <nav>
-          <a href="#home">About us</a>
-          <a href="#home">Contact us</a>
-          <a href="#about">login</a>
-          <a href="#services">Find a doctor</a>
-          <a href="#contact">Home</a>
+        <nav className="nav_login" >
+          
+          <Link to="/user_login">Login</Link>
+         
         </nav>
       </header>
 

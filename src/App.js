@@ -6,6 +6,9 @@ import Header from "./components/Header";
 import { useState } from "react";
 import MyFile from "./components/myFile";
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import UserRegistration from "./components/UserRegistration";
+import EmptyNavbar from "./components/EmptyNavbar";
+import UserLogin from "./components/UserLogin";
 
 
 function App() {
@@ -14,6 +17,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<MyFile />} />
+        <Route path="/user_registration" element={[<UserRegistration />]} />
+        <Route path="/user_login" element={[<UserLogin />]} />
       </Routes>
       
     </div>
