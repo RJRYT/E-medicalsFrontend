@@ -33,8 +33,8 @@ nav a {
   line-height: normal;
 }
 #icon {
-  width: 118px;
-  height: 87px;
+  width: 170px;
+  height: 67px;
   flex-shrink: 0;
   border-radius: 9px;
   background: linear-gradient(135deg, #f190d9 0%, #d939cd 100%);
@@ -65,7 +65,7 @@ nav a {
   line-height: normal;
   text-transform: lowercase;
   position: relative;
-  margin-left: 72px;
+  /* margin-left: 72px; */
 }
 #virtualHealth {
   position: relative;

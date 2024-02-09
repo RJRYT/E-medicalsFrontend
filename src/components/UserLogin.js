@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./UserLogin.css";
 import EmptyNavbar from "./EmptyNavbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
 
 function UserLogin() {
@@ -9,6 +9,8 @@ function UserLogin() {
     email: "",
     password: "",
   });
+
+  const navigate=useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +27,7 @@ function UserLogin() {
         console.log("data entered", result);
         if (result.data.status == 200) {
           localStorage.setItem("userid", result.data.data._id);
+          navigate('/user_home')
           alert("login Sucessfully...");
         } else if (result.data.status == 500) {
           alert(result.data.msg)
@@ -47,13 +50,15 @@ function UserLogin() {
           <p className="user_log_box_title mb-5">Login</p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
-            <input
+            <input 
               type="email"
               className="mb-3"
               placeholder="Email"
               name="email"
               value={loginData.email}
               onChange={handleChange}
+              required
+
             />
             <input
               type="password"
@@ -62,8 +67,10 @@ function UserLogin() {
               name="password"
               value={loginData.password}
               onChange={handleChange}
+              required
+
             />
-            <p>Forgot Password</p>
+            <p><Link to='/user_forgot_password' >Forgot Password</Link></p>
             <div className="user_log_btn">
               <button type="submit" onClick={handleLogin}>Login</button>
             </div>
