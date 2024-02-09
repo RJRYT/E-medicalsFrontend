@@ -32,14 +32,23 @@ function UserRegistration() {
       };
     
       const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(data);
        
           if (!/^\d{6}$/.test(data.pincode)) {
               alert("Pincode must have 6 digits");
               return;
             }
+          if (!/^\d{10}$/.test(data.contact)) {
+              alert("Contact must have 10 digits");
+              return;
+            }
   
-            axiosInstance.post(`/registerUser`,data)
+            axiosInstance.post(`/registerUser`,data, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            })
             .then((res)=>{
               console.log(res);
                 if(res.data.status===200){

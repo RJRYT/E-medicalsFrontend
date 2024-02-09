@@ -19,16 +19,15 @@ function UserLogin() {
   };
 
   const handleLogin = (e) => {
+    e.preventDefault()
     axiosInstance.post(`/loginUser`, loginData)
       .then((result) => {
         console.log("data entered", result);
         if (result.data.status == 200) {
-          localStorage.setItem("advertiserid", result.data.data._id);
+          localStorage.setItem("userid", result.data.data._id);
           alert("login Sucessfully...");
-          // window.location.reload(false)
         } else if (result.data.status == 500) {
-          // alert(result.data.msg);
-          alert("password mismatch")
+          alert(result.data.msg)
         }
         else {
           alert(result.data.msg)
