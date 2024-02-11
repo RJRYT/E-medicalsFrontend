@@ -40,10 +40,6 @@ function App() {
         <Route path="/hospital_home" element={[<HospitalNavbar/>,<MyFile />]} />
         <Route path="/hospital_profile" element={[<HospitalNavbar/>,<HospitalProfile url={url} />]} />
         <Route path="/hospital_forgot_password" element={[<HospitalForgotPassword />]} />
-
-
-
-
       </Routes>
       
     </div>

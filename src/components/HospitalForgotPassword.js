@@ -46,7 +46,7 @@ function HospitalForgotPassword() {
        <div className="user_log">
         <EmptyNavbar />
         <div className="user_log_box">
-          <p className="user_log_box_title mb-5">Forgot Password</p>
+          <p className="user_log_box_title mb-5">Forgot Password </p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
             <input

@@ -63,14 +63,6 @@ function UserRegistration() {
                 console.log(err);
                 alert("something went wrong")
               })
-  
-            
-          
-    
-      
-  
-  
-  
       };
     
 
