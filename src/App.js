@@ -18,6 +18,7 @@ import HospitalLogin from "./components/HospitalLogin";
 import HospitalNavbar from "./components/HospitalNavbar";
 import HospitalProfile from "./components/HospitalProfile";
 import HospitalForgotPassword from "./components/HospitalForgotPassword";
+import UserEditProfile from "./components/UserEditProfile";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/user_forgot_password" element={[<UserForgotPassword />]} />
         <Route path="/user_home" element={[<UserNavbar/>,<MyFile />]} />
         <Route path="/user_profile" element={[<UserNavbar/>,<UserProfile url={url} />]} />
+        <Route path="/user_edit_profile" element={[<UserNavbar/>,<UserEditProfile />]} />
         <Route path="/hospital_registration" element={[<HospitalRegistration />]} />
         <Route path="/hospital_login" element={[<HospitalLogin />]} />
         <Route path="/hospital_home" element={[<HospitalNavbar/>,<MyFile />]} />
