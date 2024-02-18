@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../BaseUrls';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function HospitalProfile({url}) {
 
@@ -30,7 +30,7 @@ function HospitalProfile({url}) {
 
   return (
     <div>
-      <div className="user_log user_profile">
+      <div className=" user_profile mt-5">
         <div className="user_log_box mt-2 row ">
           <div className='col-6 user_profile_left_col' >
           <img src={`${url}/${data.image.filename}`} alt="profile_picture" />
@@ -65,7 +65,7 @@ function HospitalProfile({url}) {
                     <p>{data.pincode}</p>
                 </div>
                 <div className='col-12 d-flex justify-content-around'>
-                    <button className='btn btn-success' >Edit</button>
+                    <Link to='/hospital_edit_profile' ><button className='btn btn-success' >Edit</button></Link>
                     <button className='btn btn-danger' onClick={()=>{localStorage.clear();window.location.reload(false)}} >Logout</button>
                 </div>
                

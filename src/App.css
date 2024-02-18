@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -65,7 +65,6 @@ nav a {
   line-height: normal;
   text-transform: lowercase;
   position: relative;
-  /* margin-left: 72px; */
 }
 #virtualHealth {
   position: relative;
@@ -78,7 +77,7 @@ nav a {
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
-  line-height: 56px; /* 116.667% */
+  line-height: 56px;
   position: relative;
   margin-top: 200px;
 
@@ -90,12 +89,11 @@ p {
   font-size: 21px;
   font-style: normal;
   font-weight: 300;
-  line-height: 32px; /* 152.381% */
+  line-height: 32px;
   text-align: none;
 }
 #vhbutt {
   width: 200px;
-  /* height: 56px; */
   flex-shrink: 0;
   border-radius: 55px;
   background: linear-gradient(135deg, #f6ceec 0%, #d939cd 100%);
@@ -104,13 +102,12 @@ p {
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 60px; /* 333.333% */
+  line-height: 60px; 
 }
 #vhimg {
   width: 693px;
   height: 598px;
   flex-shrink: 0;
-  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
   position: absolute;
   margin-left: 600px;
   margin-top: 100px;
@@ -121,7 +118,7 @@ p {
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 56px; /* 155.556% */
+  line-height: 56px;
   margin-top: 150px;
   margin-left: 50px;
   text-align: center;
@@ -133,7 +130,7 @@ p {
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 30px; /* 166.667% */
+  line-height: 30px;
   position: relative;
   margin-top: 100;
 }
@@ -144,7 +141,6 @@ p {
   border-radius: 20px;
   background: #fff;
 
-  /* drop shadow */
   box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
 }
 #findmed {
@@ -154,7 +150,6 @@ p {
   border-radius: 20px;
   background: #fff;
 
-  /* drop shadow */
   box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
 }
 #sixdiv {
@@ -167,7 +162,6 @@ p {
   background: #fff;
   padding: 30px 40px;
 
-  /* drop shadow */
   box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
 }
 .button {
@@ -177,8 +171,7 @@ p {
 }
 
 .centered-button {
-  /* Additional styling for the button if needed */
-  /* padding: 10px 20px; */
+
   width: 200px;
   height: 56px;
   flex-shrink: 0;
@@ -189,7 +182,7 @@ p {
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 60px; /* 333.333% */
+  line-height: 60px; 
   text-align: center;
 }
 #carose {
@@ -202,22 +195,400 @@ footer {
   padding: 20px;
   text-align: center;
   display: flex;
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: space-between; 
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Mulish;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
   margin-top: 100px;
 }
 
 .footer-section {
   flex: 1;
-  margin: 0 10px; /* Adjust margin as needed */
-}
+  margin: 0 10px; 
+} */
+
+
 
 .nav_login{
   padding: 0 30px;
 }
+
+
+.cat-item {
+  display: block;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.177);
+  border: 1px solid transparent;
+  transition: .5s;
+}
+
+.cat-item:hover {
+  border-color: rgba(0, 0, 0, .08);
+  box-shadow: none;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: 'Mulish', sans-serif;
+}
+
+:root {
+  --primaryColor: #458FF6;
+  --grey: #7D7987;
+  --gredientColor1: #67C3F3;
+  --gredientColor2: #5A98F2;
+  --black: #000;
+  --white: #fff;
+}
+
+.rjr_h1 {
+  color: var(--black);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  padding-bottom: 30px;
+}
+.rjr_h2 {
+  color: var(--black);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  text-align: center;
+}
+.rjr_p {
+  color: var(--grey);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7em;
+}
+.rjr_section {
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+.rjr_btn-center
+{
+  position: absolute;
+  left: 43%;
+  margin-top: 30px;
+}
+
+
+/*directions*/
+
+.rjr_container {
+  max-width: 1250px;
+  margin: 0 auto;
+  align-items: center;
+}
+.rjr_flex {
+  /* margin: 0 auto; */
+  display: flex;
+}
+.rjr_a{
+  color: var(--black);
+  display: block;
+  padding: 0 15px;
+  text-decoration: none;
+}
+.rjr_button{
+  cursor: pointer;
+}
+.fa-solid
+{
+  color: var(--primaryColor);
+  padding-left: 10px;
+  padding-top: 10px;
+}
+/*===
+  btn
+  ===*/
+  .rjr_btn-primary {
+    background-color: var(--primaryColor);
+    border-radius: 55px;
+    padding: 15px 35px;
+    color: var(--white);
+    font-size: 18px;
+    border: unset;
+    font-weight: bold;
+  }
+  .rjr_btn-secondary {
+    border-radius: 55px;
+    border: 2px solid var(--primaryColor);
+    padding: 15px 50px ;
+    color: var(--primaryColor);
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+/**/
+
+
+/*===
+  navbar
+  ===*/
+.rjr_nav {
+  padding-top: 50px;
+  height: 10vh;
+}
+.rjr_nav-logo{
+  flex: 1;
+}
+.rjr_nav-links{
+  /* flex:1; */
+  /* justify-content: space-between; */
+}
+.rjr_a {
+  color: var(--grey);
+}
+.rjr_active
+{
+  color: var(--black);
+  font-weight: bold;
+}
+
+/*===
+  hero section
+  ===*/
+.rjr_hero
+{
+  justify-content: space-between;
+  height: 90vh;
+}
+.rjr_circle-pattern
+{
+  position: absolute;
+  top: 100px;
+  left: -40px;
+}
+.rjr_hero-cap
+{
+  padding: 50px 100px 50px 10px;
+  flex: 1;
+}
+.rjr_hero-cap .rjr_btn-primary
+{
+  margin-top: 40px;
+}
+.rjr_hero-img
+{
+  flex: 1;
+}
+
+/*===
+  our services section
+  ===*/
+.our-services
+{
+  align-items: center;
+  position: relative;
+}
+.section-desc
+{
+  padding: 100px ;
+}
+.our-services h2
+{
+  position: relative;
+  margin-bottom: 30px;
+}
+.our-services h2::after,
+.healthcare-providers-cap h2::after,
+.download-our-app-cap h2::after,
+.testmonial-all h2::after,
+.articles h2::after
+{
+  width:70px;
+  height: 2px;
+  border-radius: 2px;
+  position: absolute;
+  content: '';
+  background-color: var(--black);
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.services-vector{
+  position: absolute;
+  top: 350px;
+  left:-150px;
+  z-index: -1;
+}
+.services-pattern{
+  position: absolute;
+  top: 700px;
+  right:0;
+  z-index: -2;
+}
+.section-desc
+{
+ text-align: center;
+ padding: 30px 90px 30px 90px;
+}
+.rjr_cards-wrapper
+{
+max-width: 1200px;
+margin: 40px auto 0 auto;
+padding: 30px 0;
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+.rjr_card-wrapper
+{
+  background-color: #FFF;
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  border-radius: 20px;
+  max-width: 350px;
+  height: 350px;
+  margin: 10px;
+  margin-bottom: 30px;
+  padding: 40px;
+  gap: 20px;
+}
+.rjr_card-img
+{
+  width: 70px;
+  height: 80px;
+  margin: 20px 20px 50px 0;
+  align-items: center;
+}
+.rjr_card-img img {
+  object-fit:contain;
+}
+.rjr_card-wrap h3 {
+  padding-bottom: 15px;
+}
+.rjr_card-wrap p {
+  font-size: 14px;
+}
+.our-services .btn-secondary
+{
+  margin: 0px 0 50px 0;
+}
+
+/*===
+  leading healthcare providers
+  ===*/
+.healthcare-providers-cap,
+.download-our-app-cap
+{
+  padding: 50px;
+  padding-left: 150px;
+}
+.healthcare-providers-cap h2,
+.download-our-app-cap h2{
+  position: relative;
+  margin-bottom: 70px;
+  text-align: left;
+}
+.healthcare-providers-cap h2::after,
+.download-our-app-cap h2::after
+{
+  top: 145px;
+  left: 40px;
+}
+.healthcare-providers .btn-secondary,
+.download-our-app .btn-secondary 
+{
+  margin-top: 30px;
+}
+/*===
+  download our mobbile apps
+  ===*/
+  .download-our-app-cap{
+  padding-right: 75px;
+  }
+
+/*===
+  footer
+  ===*/
+  .rjr_footer
+  {
+    background: linear-gradient(183.41deg, var(--gredientColor1) -8.57%, var(--gredientColor2) 82.96%);
+    color: var(--white);
+    /* margin-top: 300px; */
+    font-weight: 100;
+    padding-top: 50px;
+    position: relative;
+    height: 400px;
+    align-items: center;
+  }
+  .footer-pattern-bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .footer-info-wrapper
+  { 
+    flex: 1;
+    color: var(--white);
+    padding: 0 0px 20px 100px;
+    
+  }
+  .rjr_footer .logo
+  {
+    padding-bottom: 30px;
+    position: relative;
+  }
+  .logo-letter{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 12px;
+  }
+  .logo-text{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 52px;
+  }
+  .footer-wrapper
+  {
+    padding: 50px 80px 0 80px;
+  }
+  .rjr_footer p
+  {
+    color: var(--white);
+    padding: 20px 170px 20px 0px;
+    font-weight: 200;
+  }
+  .copy-rights p{
+    font-size: medium;
+  }
+  .footer-nav-wrapper  { 
+  flex: 1;
+  justify-content: space-between;
+  padding-right: 60px;
+}
+.footer-nav-title
+{
+  font-weight: 500 ;
+  padding-bottom: 25px;
+}
+.footer-navs a
+{
+  font-size: 18px;
+  color:  var(--white);
+  padding: 10px;
+}
+
+.err{
+  color: rgb(214, 4, 4);
+}
+
+#btns_bg{
+  background-color: #63b7f2;
+  color: #ffff;
+}
+
+#blue_clr{
+  color: #63b7f2;
+}
+

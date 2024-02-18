@@ -3,6 +3,7 @@ import "./UserRegistration.css";
 import EmptyNavbar from "./EmptyNavbar";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
+import LandingNavbar from "./LandingNavbar";
 
 function UserRegistration() {
 
@@ -69,7 +70,7 @@ function UserRegistration() {
   return (
     <div>
       <div className="user_reg">
-      <EmptyNavbar/>
+      <LandingNavbar/>
         <div className="user_reg_head">
           <p className="user_reg_head_title">Register Now!</p>
           <p className="user_reg_head_para">Fill the information carefully</p>

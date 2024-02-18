@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../BaseUrls';
 import EmptyNavbar from './EmptyNavbar';
+import LandingNavbar from './LandingNavbar';
 
 function HospitalLogin() {
 
@@ -45,7 +46,7 @@ function HospitalLogin() {
   return (
     <div>
       <div className="user_log">
-        <EmptyNavbar />
+        <LandingNavbar />
         <div className="user_log_box">
           <p className="user_log_box_title mb-5">Login</p>
           <form onSubmit={handleLogin} >

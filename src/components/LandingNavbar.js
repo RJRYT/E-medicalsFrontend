@@ -9,23 +9,34 @@ import img7 from "../Assets/Frame.png";
 import img8 from "../Assets/trafalgar-illustration sec02 1.png";
 import img9 from "../Assets/trafalgar-illustration sec03 1.png";
 import { Link } from "react-router-dom";
+import Logo from "../Assets/img/logo.png";
+
 
 function LandingNavbar() {
 
   
   return (
     <div>
-       <header id="head">
-        <div id="icon">
-          <div id="icon1">
-            Emed<span id="icon2">ical</span>
-          </div>
-          {/* <div id="icon2">ical</div> */}
-        </div>
-        <nav className="nav_login">
-          <Link to="/user_login">Login</Link>
-        </nav>
-      </header>
+      <nav className="rjr_container rjr_flex rjr_nav justify-content-between">
+      <div className="rjr_nav-logo ">
+        <a className="rjr_a" href="#"><img src={Logo} alt="logo"/></a>
+      </div>
+      <div className="rjr_nav-links rjr_flex">
+        <Link to='/' className="rjr_a rjr_active">Home</Link>
+        <div class="nav-item dropdown">
+                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+                   <div class="dropdown-menu rounded-0 m-0">
+                       <Link to='/user_login' class="dropdown-item">User</Link>
+                       <Link to='/hospital_login' class="dropdown-item">Hospital</Link>
+                       <Link to='/lab_login' class="dropdown-item">Lab</Link>
+                   </div>
+               </div>
+        {/* <a className="rjr_a" href="#">About</a>
+        <a className="rjr_a" href="#">Contact Us</a>
+        <a className="rjr_a" href="#">Sign Up</a>
+        <a className="rjr_a" href="#">Sign In</a> */}
+      </div>
+    </nav>
     </div>
   )
 }

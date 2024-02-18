@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../BaseUrls';
 import EmptyNavbar from './EmptyNavbar';
+import LandingNavbar from './LandingNavbar';
 
 function HospitalForgotPassword() {
 
@@ -44,7 +45,7 @@ function HospitalForgotPassword() {
   return (
     <div>
        <div className="user_log">
-        <EmptyNavbar />
+        <LandingNavbar />
         <div className="user_log_box">
           <p className="user_log_box_title mb-5">Forgot Password </p>
           <form onSubmit={handleLogin} >

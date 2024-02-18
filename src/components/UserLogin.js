@@ -3,6 +3,7 @@ import "./UserLogin.css";
 import EmptyNavbar from "./EmptyNavbar";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
+import LandingNavbar from "./LandingNavbar";
 
 function UserLogin() {
   const [loginData, setLoginData] = useState({
@@ -45,8 +46,8 @@ function UserLogin() {
   return (
     <div>
       <div className="user_log">
-        <EmptyNavbar />
-        <div className="user_log_box">
+        <LandingNavbar />
+        <div className="user_log_box mt-5">
           <p className="user_log_box_title mb-5">Login</p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
