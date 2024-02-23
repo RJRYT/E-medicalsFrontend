@@ -8,3 +8,36 @@ export const BookingSchema  = yup.object().shape({
     year:yup.string().required("Required"),
     // aadhar:yup.number().min(100000000000,"Aadhaar number must be minimum 12 digit number").max(999999999999, "Aadhaar number must be a 12-digit number").required("Required"),
 })
+
+export const DocRegSchema  = yup.object().shape({
+    name: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+    city: yup.string().min(2,"Please enter a valid address").required("Required"),          
+    specialization: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+    email: yup.string().email("Please enter a valid email").required("Required"),
+    password: yup.string().required("Required"),
+    experience:yup.number().min(2).positive().integer().required("Required"),
+    pincode: yup.number().min(100000, "Pincode must be minimum 6-digit number").max(999999, "Pincode must be a 6-digit number").required("Required"),
+    district: yup.string().min(2,"Please enter a valid address").required("Required"),          
+    qualification: yup.string().required("Required"),          
+    affiliationnumber: yup.string().required("Required"),          
+    contact: yup.number().min(1000000000,"Phone number must be minimum 10 digit number").max(9999999999, "Phone number must be a 10-digit number").required("Required"),
+    fromtime: yup.string().required("Required"), // 24-hour format HH:mm
+    totime: yup.string().required("Required"), // 24-hour format HH:mm
+    availabledays: yup.array().min(1, 'Select at least one available day').required("Required"),
+    image: yup
+    .mixed()
+    .required('Please select an image') // Validation for required image
+    .test(
+      'fileSize',
+      'Image size is too large (max 5 MB)',
+      (value) => !value || (value && value.size <= 5 * 1024 * 1024)
+    ) // Example: additional validation for maximum file size (5 MB)
+    .test(
+      'fileType',
+      'Unsupported file format',
+      (value) =>
+        !value ||
+        (value && ['image/jpeg', 'image/png', 'image/gif'].includes(value.type))
+    ), // Example: additional validation for supported file formats
+
+})

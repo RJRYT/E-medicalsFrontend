@@ -6,19 +6,7 @@ import Logo from "../Assets/img/logo.png";
 function LabNavbar() {
   return (
     <div>
-      {/* <div className='empty_navbar' >
-        <div className='container d-flex justify-content-between'>
-            <div className='empty_navbar_logo' >
-                <p className='empty_navbar_logo_title1' >EMED<span className='empty_navbar_logo_title2' >icals</span></p>
-            </div>
-            <div className='user_nav_content'>
-            <Link to='/lab_home' >Home</Link>
-            <Link to='/lab_add_test' >Add test</Link>
-            <Link to='/lab_view_tests' >View test</Link>
-
-            </div>
-        </div>
-      </div> */}
+      
       <nav className="rjr_container rjr_flex rjr_nav justify-content-between">
       <div className="rjr_nav-logo ">
         <a className="rjr_a" href="#"><img src={Logo} alt="logo"/></a>

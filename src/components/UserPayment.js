@@ -19,6 +19,7 @@ function UserPayment() {
 
   const onSubmit = (e) => {
     // console.log(values);
+    e.preventDefault()
   axiosInstance
     .post("/addBooking", valueDetails.values)
     .then((response) => {

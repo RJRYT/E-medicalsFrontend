@@ -37,6 +37,17 @@ import UserViewPendingBookings from "./components/UserViewPendingBookings";
 import UserViewApprovedBookings from "./components/UserViewApprovedBookings";
 import LabViewTestReq from "./components/LabViewTestReq";
 import LabViewTestBooking from "./components/LabViewTestBooking";
+import LabAddResult from "./components/LabAddResult";
+import LabViewResults from "./components/LabViewResults";
+import UserViewResult from "./components/UserViewResult";
+import HospitalAddDoctor from "./components/HospitalAddDoctor";
+import HospitalViewDoctors from "./components/HospitalViewDoctors";
+import HospitalEdtDoctorProfile from "./components/HospitalEdtDoctorProfile";
+import AdminLogin from "./components/AdminLogin";
+import AdminHome from "./components/AdminHome";
+import AdminNavbar from "./components/AdminNavbar";
+import AdminViewDoctors from "./components/AdminViewDoctors";
+import AdminViewTests from "./components/AdminViewTests";
 
 
 function App() {
@@ -57,9 +68,10 @@ function App() {
         <Route path="/user_edit_profile" element={[<UserNavbar/>,<UserEditProfile />]} />
         <Route path="/user_view_test" element={[<UserNavbar/>,<UserViewTests />]} />
         <Route path="/user_book_test/:id" element={[<UserNavbar/>,<UserBookTest />]} />
-        <Route exact path="/user_payment/:id/:value/:price" element={[<UserNavbar/>,<UserPayment/>]}/>
-        <Route exact path="/user_pending_bookings" element={[<UserNavbar/>,<UserViewPendingBookings/>]}/>
-        <Route exact path="/user_approved_bookings" element={[<UserNavbar/>,<UserViewApprovedBookings/>]}/>
+        <Route path="/user_payment/:id/:value/:price" element={[<UserNavbar/>,<UserPayment/>]}/>
+        <Route path="/user_pending_bookings" element={[<UserNavbar/>,<UserViewPendingBookings/>]}/>
+        <Route path="/user_approved_bookings" element={[<UserNavbar/>,<UserViewApprovedBookings/>]}/>
+        <Route path="/user_view_result/:id" element={[<UserNavbar/>,<UserViewResult/>]}/>
 
 
         <Route path="/hospital_registration" element={[<HospitalRegistration />]} />
@@ -68,6 +80,9 @@ function App() {
         <Route path="/hospital_profile" element={[<HospitalNavbar/>,<HospitalProfile url={url} />]} />
         <Route path="/hospital_edit_profile" element={[<HospitalNavbar/>,<HospitalEditProfile />]} />
         <Route path="/hospital_forgot_password" element={[<HospitalForgotPassword />]} />
+        <Route path="/hospital_add_doctor" element={[<HospitalNavbar/>,<HospitalAddDoctor />]} />
+        <Route path="/hospital_view_doctors" element={[<HospitalNavbar/>,<HospitalViewDoctors url={url} />]} />
+        <Route path="/hospital_edit_doctor/:id" element={[<HospitalNavbar/>,<HospitalEdtDoctorProfile url={url} />]} />
 
 
         <Route path="/lab_login" element={[<LabLogin />]} />
@@ -77,6 +92,15 @@ function App() {
         <Route path="/lab_edit_test/:id" element={[<LabNavbar/>,<LabEditTest />]} />
         <Route path="/lab_view_test_rq" element={[<LabNavbar/>,<LabViewTestReq />]} />
         <Route path="/lab_view_test_bookings" element={[<LabNavbar/>,<LabViewTestBooking />]} />
+        <Route path="/lab_add_result/:bid/:tid/:uid" element={[<LabNavbar/>,<LabAddResult />]} />
+        <Route path="/lab_view_results/:id" element={[<LabNavbar/>,<LabViewResults />]} />
+
+
+        <Route path="/admin" element={[<AdminLogin />]} />
+        <Route path="/admin_home" element={[<AdminNavbar/>,<AdminHome url={url} />]} />
+        <Route path="/admin_view_doctors" element={[<AdminNavbar/>,<AdminViewDoctors url={url} />]} />
+        <Route path="/admin_view_tests" element={[<AdminNavbar/>,<AdminViewTests  />]} />
+
 
 
       </Routes>

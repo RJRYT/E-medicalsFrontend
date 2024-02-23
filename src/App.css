@@ -592,3 +592,25 @@ flex-wrap: wrap;
   color: #63b7f2;
 }
 
+.lab_view_result{
+  margin: 50px 0;
+}
+.lab_view_result_patient_title p{
+  font-size: 18px;
+  font-weight: bold;
+  background-color:  #63b7f2;
+  padding: 5px 10px;
+}
+
+.hospital_view_doct_pic img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* .lab_view_result_variations p{
+  font-size: 18px;
+  
+} */
+

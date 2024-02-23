@@ -67,7 +67,7 @@ function LabViewTestReq() {
               <div id="tab-1" class="tab-pane fade show p-0 active">
                 {array.length ? (
                   array.map((a) => {
-                    if (a.approvedByLab == "Pending") {
+                    
                       return (
                         <div class="job-item cat-item p-4 mb-4">
                           <div class="row g-4">
@@ -118,15 +118,11 @@ function LabViewTestReq() {
                           </div>
                         </div>
                       );
-                    } else if (a.approvedByLab == "Rejected") {
-                      <h1 style={{ padding: "30px", textAlign: "center" }}>
-                        No requests found
-                      </h1>;
-                    }
+                   
                   })
                 ) : (
                   <h1 style={{ padding: "30px", textAlign: "center" }}>
-                    No requests found
+                    No Requests Found
                   </h1>
                 )}
               </div>

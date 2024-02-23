@@ -60,7 +60,7 @@ function UserViewTests() {
                                 </div>
                                 </div>
                                         )
-                                    }) : <h1 style={{padding:'30px',textAlign:'center'}}>No tests found</h1>
+                                    }) : <h1 style={{padding:'30px',textAlign:'center'}}>No Tests Found</h1>
                                 }
                                 
                             </div>

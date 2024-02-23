@@ -75,7 +75,7 @@ function UserViewPendingBookings() {
                         </div>
                     </div>
                             )
-                        }):<h2 style={{padding:'30px',textAlign:'center'}} >No bookings</h2>
+                        }):<h2 style={{padding:'30px',textAlign:'center'}} >No Bookings</h2>
                     }
                     
                     

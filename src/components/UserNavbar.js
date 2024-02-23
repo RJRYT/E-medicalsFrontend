@@ -27,7 +27,7 @@ function UserNavbar() {
         <Link to='/user_home' className="rjr_a ">Home</Link>
         <Link to='/user_view_test' className="rjr_a ">Tests</Link>
         <div class="nav-item dropdown">
-                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Bookings</a>
+                   <Link href="#" class="dropdown-toggle rjr_a" data-bs-toggle="dropdown">Bookings</Link>
                    <div class="dropdown-menu rounded-0 m-0">
                        <Link to='/user_approved_bookings' class="dropdown-item">Approved Bookings</Link>
                        <Link to='/user_pending_bookings' class="dropdown-item">Pending Booking</Link>

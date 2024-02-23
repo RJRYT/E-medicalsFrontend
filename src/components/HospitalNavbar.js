@@ -24,15 +24,15 @@ function HospitalNavbar() {
       </div>
       <div className="rjr_nav-links rjr_flex">
         <Link to='/hospital_home' className="rjr_a ">Home</Link>
-        <Link to='/hospital_profile' className="rjr_a ">Profile</Link>
-        {/* <div class="nav-item dropdown">
-                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+        <div class="nav-item dropdown">
+                   <a href="#" class=" dropdown-toggle rjr_a" data-bs-toggle="dropdown">Doctor</a>
                    <div class="dropdown-menu rounded-0 m-0">
-                       <Link to='/user_login' class="dropdown-item">User</Link>
-                       <Link to='/hospital_login' class="dropdown-item">Hospital</Link>
-                       <Link to='/lab_login' class="dropdown-item">Lab</Link>
+                       <Link to='/hospital_add_doctor' class="dropdown-item">Add Doctor</Link>
+                       <Link to='/hospital_view_doctors' class="dropdown-item">View Doctor</Link>
                    </div>
-               </div> */}
+               </div>
+               <Link to='/hospital_profile' className="rjr_a ">Profile</Link>
+
         {/* <a className="rjr_a" href="#">About</a>
         <a className="rjr_a" href="#">Contact Us</a>
         <a className="rjr_a" href="#">Sign Up</a>
