@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../BaseUrls';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LabViewTests() {
+
+    const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
+
 
     const [array,setArray]= useState([]);
 
@@ -61,7 +69,7 @@ function LabViewTests() {
                             <h6 class="mb-3 ">{a.price}</h6>
                             <h6 class="mb-3 ">{a.comments}</h6>
                         <Link class="btn btn-success py1 px3 mt-3 " to={`/lab_edit_test/${a._id}`} style={{marginRight:'3px'}} >Edit</Link>
-                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link>
+                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link> */}
                         </div>
                     </div> 
                             )

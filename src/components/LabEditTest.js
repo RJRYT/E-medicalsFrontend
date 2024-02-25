@@ -8,8 +8,14 @@ import abimg3 from '../Assets/img/gallery-05.jpg'
 
 function LabEditTest() {
 
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
+
     const [values,setValue] = useState({});
-    const navigate=useNavigate();
   
   
     const id=useParams();

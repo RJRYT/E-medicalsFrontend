@@ -1,9 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from "../Assets/img/logo.png";
 
 
 function LabNavbar() {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
+
   return (
     <div>
       
@@ -27,7 +35,7 @@ function LabNavbar() {
                        <Link to='/lab_view_test_bookings' class="dropdown-item">Bookings</Link>
                    </div>
                </div>
-               <Link to='/' className="rjr_a ">Logout</Link>
+               <Link onClick={()=>{localStorage.clear();window.location.reload(false)}} className="rjr_a ">Logout</Link>
 
         {/* <a className="rjr_a" href="#">About</a>
         <a className="rjr_a" href="#">Contact Us</a>

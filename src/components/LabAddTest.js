@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import abimg from '../Assets/img/gallery-05.jpg'
 import abimg1 from '../Assets/img/gallery-08.jpg'
 import abimg2 from '../Assets/img/img-3.jpg'
 import abimg3 from '../Assets/img/gallery-05.jpg'
 import axiosInstance from '../BaseUrls'
+import { useNavigate } from 'react-router-dom'
 
 function LabAddTest() {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
 
     // const id=localStorage.getItem('lablogid')
 
@@ -17,6 +25,7 @@ function LabAddTest() {
       comments:'',
       details:[]
 })
+
 
 
 

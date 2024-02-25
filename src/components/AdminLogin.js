@@ -22,7 +22,7 @@ function AdminLogin() {
         console.log('submitted')
         b.preventDefault()
         if(login.name=='admin' && login.password=='admin123'){
-        //    localStorage.setItem('adminlog',1)        
+           localStorage.setItem('adminid',1)        
            alert('Login successfully')         
           navigate("/admin_home")
         }else{

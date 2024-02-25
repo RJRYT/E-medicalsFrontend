@@ -22,7 +22,7 @@ function LabLogin() {
         console.log('submitted')
         b.preventDefault()
         if(loginData.email=='lab' && loginData.password=='lab123'){
-        //    localStorage.setItem('adminlog',1)        
+           localStorage.setItem('labid',1)        
            alert('Login successfully')         
           navigate("/lab_home")
         }else{

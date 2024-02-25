@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
 
 function LabViewResults() {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
+
   const { id } = useParams();
   const [data, setData] = useState({ userid: { dob: "" }, testid: {} });
   const [testDetails, setTestDetails] = useState([]);

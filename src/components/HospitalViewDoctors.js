@@ -73,7 +73,7 @@ function HospitalViewDoctors({ url }) {
                         <h6 class="mb-3 ">{a.contact}</h6>
                         <div className="d-flex" >
                         <Link class="btn btn-success py1 px3 mt-3 " to={`/hospital_edit_doctor/${a._id}`} style={{marginRight:'3px'}} >Edit</Link>
-                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link>
+                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link> */}
                         </div>
                         
                         {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link> */}

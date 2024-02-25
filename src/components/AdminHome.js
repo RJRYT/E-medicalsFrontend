@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../BaseUrls';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AdminHome({url}) {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('adminid')==null){
+      navigate('/')
+    }
+  });
 
     const [array,setArray]= useState([]);
 

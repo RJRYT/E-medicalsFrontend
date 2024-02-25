@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../Assets/img/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AdminNavbar() {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('adminid')==null){
+      navigate('/')
+    }
+  });
+
   return (
     <div>
       <nav className="rjr_container rjr_flex rjr_nav justify-content-between">
@@ -33,7 +41,7 @@ function AdminNavbar() {
               </Link>
             </div>
           </div>
-          <Link to="/" className="rjr_a ">
+          <Link onClick={()=>{localStorage.clear();window.location.reload(false)}} className="rjr_a ">
             Logout
           </Link>
         </div>

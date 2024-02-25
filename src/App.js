@@ -48,6 +48,9 @@ import AdminHome from "./components/AdminHome";
 import AdminNavbar from "./components/AdminNavbar";
 import AdminViewDoctors from "./components/AdminViewDoctors";
 import AdminViewTests from "./components/AdminViewTests";
+import UserHome from "./components/UserHome";
+import HospitalHome from "./components/HospitalHome";
+import Labhome from "./components/Labhome";
 
 
 function App() {
@@ -63,7 +66,7 @@ function App() {
         <Route path="/user_registration" element={[<UserRegistration />]} />
         <Route path="/user_login" element={[<UserLogin />]} />
         <Route path="/user_forgot_password" element={[<UserForgotPassword />]} />
-        <Route path="/user_home" element={[<UserNavbar/>,<MyFile />]} />
+        <Route path="/user_home" element={[<UserNavbar/>,<UserHome />]} />
         <Route path="/user_profile" element={[<UserNavbar/>,<UserProfile url={url} />]} />
         <Route path="/user_edit_profile" element={[<UserNavbar/>,<UserEditProfile />]} />
         <Route path="/user_view_test" element={[<UserNavbar/>,<UserViewTests />]} />
@@ -76,7 +79,7 @@ function App() {
 
         <Route path="/hospital_registration" element={[<HospitalRegistration />]} />
         <Route path="/hospital_login" element={[<HospitalLogin />]} />
-        <Route path="/hospital_home" element={[<HospitalNavbar/>,<MyFile />]} />
+        <Route path="/hospital_home" element={[<HospitalNavbar/>,<HospitalHome />]} />
         <Route path="/hospital_profile" element={[<HospitalNavbar/>,<HospitalProfile url={url} />]} />
         <Route path="/hospital_edit_profile" element={[<HospitalNavbar/>,<HospitalEditProfile />]} />
         <Route path="/hospital_forgot_password" element={[<HospitalForgotPassword />]} />
@@ -86,7 +89,7 @@ function App() {
 
 
         <Route path="/lab_login" element={[<LabLogin />]} />
-        <Route path="/lab_home" element={[<LabNavbar/>,<MyFile />]} />
+        <Route path="/lab_home" element={[<LabNavbar/>,<Labhome />]} />
         <Route path="/lab_add_test" element={[<LabNavbar/>,<LabAddTest />]} />
         <Route path="/lab_view_tests" element={[<LabNavbar/>,<LabViewTests />]} />
         <Route path="/lab_edit_test/:id" element={[<LabNavbar/>,<LabEditTest />]} />
@@ -97,7 +100,7 @@ function App() {
 
 
         <Route path="/admin" element={[<AdminLogin />]} />
-        <Route path="/admin_home" element={[<AdminNavbar/>,<AdminHome url={url} />]} />
+        <Route path="/admin_home" element={[<AdminNavbar/>,<AdminHome url={url} />]} />            
         <Route path="/admin_view_doctors" element={[<AdminNavbar/>,<AdminViewDoctors url={url} />]} />
         <Route path="/admin_view_tests" element={[<AdminNavbar/>,<AdminViewTests  />]} />
 

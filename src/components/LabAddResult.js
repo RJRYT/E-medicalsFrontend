@@ -3,11 +3,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
 
 function LabAddResult() {
+
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('labid')==null){
+      navigate('/')
+    }
+  });
+
   const { bid } = useParams();
   const { tid } = useParams();
   const { uid } = useParams();
   const [data, setData] = useState({ details: [] });
-  const navigate = useNavigate();
 
   // useEffect(()=>{
   //     axiosInstance.post(`/viewBookingById/${bid}`)

@@ -1,6 +1,7 @@
 import React from 'react'
 import Element from "../Assets/img/element.png";
 import illustration from "../Assets/img/trafalgar-header illustration 1.png";
+import { Link } from 'react-router-dom';
 
 function LandingCarousel() {
   return (
@@ -15,7 +16,7 @@ function LandingCarousel() {
             healthcare, accessible on mobile and online 
             for everyone
         </p>
-        <button className="rjr_button rjr_btn-primary">Consult today</button>
+        <Link to={'/user_login'} ><button className="rjr_button rjr_btn-primary">Consult today</button></Link>
       </div>
       <div className="rjr_hero-img">
         <img src={illustration} alt="rjr_hero-photo"/>

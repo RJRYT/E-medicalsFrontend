@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../BaseUrls';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AdminViewDoctors({url}) {
 
+  const navigate=useNavigate()
+  useEffect(() => {
+    if(localStorage.getItem('adminid')==null){
+      navigate('/')
+    }
+  });
     const [array, setArray] = useState([]);
 
   useEffect(() => {
@@ -72,7 +78,7 @@ function AdminViewDoctors({url}) {
                         <h6 class="mb-3 ">{a.experience} Year Experience</h6>
                         <h6 class="mb-3 ">{a.contact}</h6>
                         <div className="d-flex" >
-                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link>
+                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link> */}
                         </div>
                         
                       </div>
