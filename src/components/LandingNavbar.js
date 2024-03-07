@@ -29,6 +29,8 @@ function LandingNavbar() {
                        <Link to='/user_login' class="dropdown-item">User</Link>
                        <Link to='/hospital_login' class="dropdown-item">Hospital</Link>
                        <Link to='/lab_login' class="dropdown-item">Lab</Link>
+                       <Link to='/pharmacy_login' class="dropdown-item">Pharmacy</Link>
+                       <Link to='/doctor_login' class="dropdown-item">Doctor</Link>
                    </div>
                </div>
         {/* <a className="rjr_a" href="#">About</a>

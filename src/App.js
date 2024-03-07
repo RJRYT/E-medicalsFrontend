@@ -51,6 +51,27 @@ import AdminViewTests from "./components/AdminViewTests";
 import UserHome from "./components/UserHome";
 import HospitalHome from "./components/HospitalHome";
 import Labhome from "./components/Labhome";
+import UserViewDoctors from "./components/UserViewDoctors";
+import UserViewHospitals from "./components/UserViewHospitals";
+import UserBookAppointment from "./components/UserBookAppointment";
+import PharmacyLogin from "./components/PharmacyLogin";
+import PharmacyNavbar from "./components/PharmacyNavbar";
+import PharmacyHome from "./components/PharmacyHome";
+import PharmacyAddMedicine from "./components/PharmacyAddMedicine";
+import PharmacyViewMedicines from "./components/PharmacyViewMwdicines";
+import DoctorLogin from "./components/DoctorLogin";
+import DoctorNavbar from "./components/DoctorNavbar";
+import DoctorHome from "./components/DoctorHome";
+import DoctorProfile from "./components/DoctorProfile";
+import DoctorViewAppointments from "./components/DoctorViewAppointments";
+import UserViewAppointments from "./components/UserViewAppointments";
+import DoctorViewPatientDetails from "./components/DoctorViewPatientDetails";
+import DoctorViewUserTestDetails from "./components/DoctorViewUserTestDetails";
+import DoctorAddPrescription from "./components/DoctorAddPrescription";
+import DoctorViewPatientPrescription from "./components/DoctorViewPatientPrescription";
+import UserViewPrescription from "./components/UserViewPrescription";
+import DoctorViewPriscriptions from "./components/DoctorViewPriscriptions";
+import UserPrescriptions from "./components/UserPrescriptions";
 
 
 function App() {
@@ -75,6 +96,14 @@ function App() {
         <Route path="/user_pending_bookings" element={[<UserNavbar/>,<UserViewPendingBookings/>]}/>
         <Route path="/user_approved_bookings" element={[<UserNavbar/>,<UserViewApprovedBookings/>]}/>
         <Route path="/user_view_result/:id" element={[<UserNavbar/>,<UserViewResult/>]}/>
+        <Route path="/user_view_hospital" element={[<UserNavbar/>,<UserViewHospitals url={url} />]}/>
+        <Route path="/user_view_doctors/:id" element={[<UserNavbar/>,<UserViewDoctors url={url} />]}/>
+        <Route path="/user_take_appointment/:id" element={[<UserNavbar/>,<UserBookAppointment url={url} />]}/>
+        <Route path="/user_view_appointment/today" element={[<UserNavbar/>,<UserViewAppointments data='today' />]}/>
+        <Route path="/user_view_appointment/upcoming" element={[<UserNavbar/>,<UserViewAppointments data='upcoming' />]}/>
+        <Route path="/user_view_appointment/dateover" element={[<UserNavbar/>,<UserViewAppointments data='dateover' />]}/>
+        <Route path="/user_prescriptions" element={[<UserNavbar/>,<UserPrescriptions />]}/>
+        <Route path="/user_view_prescription/:id" element={[<UserNavbar/>,<UserViewPrescription />]}/>
 
 
         <Route path="/hospital_registration" element={[<HospitalRegistration />]} />
@@ -103,6 +132,25 @@ function App() {
         <Route path="/admin_home" element={[<AdminNavbar/>,<AdminHome url={url} />]} />            
         <Route path="/admin_view_doctors" element={[<AdminNavbar/>,<AdminViewDoctors url={url} />]} />
         <Route path="/admin_view_tests" element={[<AdminNavbar/>,<AdminViewTests  />]} />
+
+
+        <Route path="/pharmacy_login" element={[<PharmacyLogin />]} />
+        <Route path="/pharmacy_home" element={[<PharmacyNavbar/>,<PharmacyHome />]} />
+        <Route path="/pharmacy_add_medicine" element={[<PharmacyNavbar/>,<PharmacyAddMedicine />]} />
+        <Route path="/pharmacy_view_medicine" element={[<PharmacyNavbar/>,<PharmacyViewMedicines url={url} />]} />
+
+
+        <Route path="/doctor_login" element={[<DoctorLogin />]} />
+        <Route path="/doctor_home" element={[<DoctorNavbar />,<DoctorHome/>]} />
+        <Route path="/doctor_profile" element={[<DoctorNavbar/>,<DoctorProfile url={url} />]} />
+        <Route path="/doctor_view_appointment" element={[<DoctorNavbar/>,<DoctorViewAppointments  />]} />
+        <Route path="/doctor_view_patient_details/:aid/:uid" element={[<DoctorNavbar/>,<DoctorViewPatientDetails url={url} />]} />
+        <Route path="/doctor_view_patient_test_result/:id" element={[<DoctorNavbar/>,<DoctorViewUserTestDetails  />]} />
+        <Route path="/doctor_add_prescription/:id/:uid" element={[<DoctorNavbar/>,<DoctorAddPrescription  />]} />
+        <Route path="/doctor_view_patient_prescription/:id" element={[<DoctorNavbar/>,<DoctorViewPatientPrescription  />]} />
+        <Route path="/doctor_view_prescription" element={[<DoctorNavbar/>,<DoctorViewPriscriptions  />]} />
+
+
 
 
 
