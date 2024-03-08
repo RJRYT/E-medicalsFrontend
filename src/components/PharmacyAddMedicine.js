@@ -27,10 +27,10 @@ function PharmacyAddMedicine() {
           alert("Added");
           // navigate("/Doctorlogin");
           window.location.reload();
-        } else if(response.data.status==409){
+        } else if (response.data.status == 409) {
           alert(response.data.msg);
-        }else{
-          alert('Failed');
+        } else {
+          alert("Failed");
         }
       })
       .catch((err) => {
@@ -39,7 +39,6 @@ function PharmacyAddMedicine() {
       });
 
     console.log(values);
-
   };
 
   const {
@@ -61,6 +60,7 @@ function PharmacyAddMedicine() {
       comments: "",
       image: null,
       count: "",
+      type: "",
     },
     validationSchema: MedicineAddSchema,
     onSubmit,
@@ -147,9 +147,7 @@ function PharmacyAddMedicine() {
                         <span className="err">{errors.price}</span>
                       )}
                     </div>
-                    <div class="col-2 form-group mb-2">
-                        Expiry
-                    </div>
+                    <div class="col-2 form-group mb-2">Expiry</div>
 
                     <div class="col-4 form-group mb-2">
                       <input
@@ -206,17 +204,33 @@ function PharmacyAddMedicine() {
                         <span className="err">{errors.image}</span>
                       )}
                     </div>
+                    <div class="col-6 form-group mb-2">
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        name="type"
+                      >
+                        <option disabled selected>Type</option>
+                        <option value="Tablet">Tablet</option>
+                        <option value="Syrup">Syrup</option>
+                      </select>
+                      {errors.type && touched.type && (
+                        <span className="err">{errors.type}</span>
+                      )}
+                    </div>
 
-                    <div class="col-12 form-group mb-2">
+                    <div class="col-6 form-group mb-2">
                       <div class="form-floating">
                         <textarea
                           class="form-control"
                           placeholder="Leave a comment here"
                           id="floatingTextarea2"
                           value={values.comments}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        name="comments"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          name="comments"
                         ></textarea>
                         <label for="floatingTextarea2">Comments</label>
                       </div>

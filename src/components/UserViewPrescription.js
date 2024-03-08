@@ -10,6 +10,8 @@ function UserViewPrescription() {
   const [medications, setMedications] = useState([]);
   const [hospital, setDoctor] = useState({});
 
+
+
   useEffect(() => {
     axiosInstance
       .post(`/viewPrescriptionByAppointId/${id}`)
@@ -45,6 +47,9 @@ function UserViewPrescription() {
     <div>
       <div className="user_prescription">
         <div className="container">
+          <div className="user_prescription_link">
+            <button className="btn" id="btns_bg" >Send to Pharmacy</button>
+          </div>
           <div className="user_prescription_head">
             <div className="user_prescription_head_left">
               <img src={img} alt="doc_icon" />
@@ -105,13 +110,17 @@ function UserViewPrescription() {
                 })}
               </table>
               <hr className="m-0" />
-              <div className="user_prescription_body_footer" >
-                <p className="user_prescription_head_right_title" >{hospital.name}</p>
+              <div className="user_prescription_body_footer">
+                <p className="user_prescription_head_right_title">
+                  {hospital.name}
+                </p>
                 <p className="mx-2">
                   <small>Ph : {hospital.contact}</small>
                 </p>
                 <p className="mx-2">
-                  <small>{hospital.city}, {hospital.district}, {hospital.pincode}</small>
+                  <small>
+                    {hospital.city}, {hospital.district}, {hospital.pincode}
+                  </small>
                 </p>
               </div>
             </div>

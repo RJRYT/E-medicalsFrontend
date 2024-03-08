@@ -66,6 +66,7 @@ export const MedicineAddSchema  = yup.object().shape({
       !value ||
       (value && ['image/jpeg', 'image/png', 'image/gif'].includes(value.type))
   ), //validation for supported file formats
+  type: yup.string().required('Required'),  
 
 })
 

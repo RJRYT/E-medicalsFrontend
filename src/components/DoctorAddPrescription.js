@@ -118,7 +118,7 @@ const location = useLocation();
                         <label>Frequency</label>
                         <input
                           name="frequency"
-                          type="text"
+                          type="number"
                           className="form-control mb-2"
                           placeholder="Add values"
                           value={medicine.frequency}
@@ -130,7 +130,7 @@ const location = useLocation();
                         <label>Course Duration</label>
                         <input
                           name="courseduration"
-                          type="text"
+                          type="number"
                           className="form-control mb-2"
                           placeholder="Add values"
                           value={medicine.courseduration}
