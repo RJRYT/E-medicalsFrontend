@@ -38,7 +38,7 @@ function LabLogin() {
       <div className="user_log">
         <LandingNavbar />
         <div className="user_log_box">
-          <p className="user_log_box_title mb-5">Login</p>
+          <p className="user_log_box_title mb-5">Lab Login</p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
             <input 
