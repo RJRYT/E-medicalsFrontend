@@ -21,23 +21,51 @@ export const DocRegSchema  = yup.object().shape({
     qualification: yup.string().required("Required"),          
     affiliationnumber: yup.string().required("Required"),          
     contact: yup.number().min(1000000000,"Phone number must be minimum 10 digit number").max(9999999999, "Phone number must be a 10-digit number").required("Required"),
-    fromtime: yup.string().required("Required"), // 24-hour format HH:mm
-    totime: yup.string().required("Required"), // 24-hour format HH:mm
+    fromtime: yup.string().required("Required"), 
+    totime: yup.string().required("Required"), 
     availabledays: yup.array().min(1, 'Select at least one available day').required("Required"),
     image: yup
     .mixed()
-    .required('Please select an image') // Validation for required image
+    .required('Please select an image') 
     .test(
       'fileSize',
       'Image size is too large (max 5 MB)',
       (value) => !value || (value && value.size <= 5 * 1024 * 1024)
-    ) // Example: additional validation for maximum file size (5 MB)
+    ) //validation for maximum file size (5 MB)
     .test(
       'fileType',
       'Unsupported file format',
       (value) =>
         !value ||
         (value && ['image/jpeg', 'image/png', 'image/gif'].includes(value.type))
-    ), // Example: additional validation for supported file formats
+    ), //validation for supported file formats
 
 })
+
+export const MedicineAddSchema  = yup.object().shape({
+  name: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+  manufacturer: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+  description: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+  price:yup.number().positive().integer().required("Required"),
+  expiryDate:yup.string().required("Required"),
+  dosage:yup.string().required("Required"),
+  comments: yup.string(),          
+  count: yup.number().min(0, 'Add the count').required("Required"),
+  image: yup
+  .mixed()
+  .required('Please select an image') 
+  .test(
+    'fileSize',
+    'Image size is too large (max 5 MB)',
+    (value) => !value || (value && value.size <= 5 * 1024 * 1024)
+  ) //validation for maximum file size (5 MB)
+  .test(
+    'fileType',
+    'Unsupported file format',
+    (value) =>
+      !value ||
+      (value && ['image/jpeg', 'image/png', 'image/gif'].includes(value.type))
+  ), //validation for supported file formats
+
+})
+

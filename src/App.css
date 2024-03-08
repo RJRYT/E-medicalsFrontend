@@ -614,3 +614,24 @@ flex-wrap: wrap;
   
 } */
 
+.payment_page_icon img{
+  height: 400px;
+  /* width: 200px; */
+}
+
+.user_appointment{
+  width: 70%;
+  /* background-color: #458FF6; */
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.user_appointment a{
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px soild black;
+  color: #000;
+  padding: 10px;
+}
+
