@@ -16,10 +16,10 @@ function Footer() {
           <img className="logo-letter" src={T} alt="trafalgar-logo"/>
           <img className="logo-text" src={Trafalgar} alt="trafalgar-logo"/>
         </span>
-        <p className='rjr_p'>Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online 
+        <p className='rjr_p'>E-Medicals provides progressive, and affordable healthcare, accessible on mobile and online 
           for everyone</p>
         <div className="copy-rights">
-        <p className='rjr_p'>©Trafalgar PTY LTD 2020. All rights reserved</p>
+        <p className='rjr_p'>E-Medicals PTY LTD 2024. All rights reserved</p>
         </div>
       </div>
       <div className="footer-nav-wrapper rjr_flex">

@@ -76,7 +76,7 @@ function HospitalRegistration() {
       <div className="user_reg">
       <LandingNavbar/>
         <div className="user_reg_head">
-          <p className="user_reg_head_title">Register Now!</p>
+          <p className="user_reg_head_title">Hospital Registration</p>
           <p className="user_reg_head_para">Fill the information carefully</p>
         </div>
         <form onSubmit={handleSubmit} >
