@@ -25,7 +25,7 @@ function UserHome() {
         {/* <button className="rjr_button rjr_btn-primary">Consult today</button> */}
       </div>
       <div className="rjr_hero-img">
-        <img src={illustration} alt="rjr_hero-photo" width={700} height={600}/>
+        <img src={illustration} className='img-fluid' alt="rjr_hero-photo" width={600} height={500}/>
       </div>
     </section>
     </div>

@@ -40,8 +40,9 @@ function DoctorHome() {
             <img
               src={illustration}
               alt="rjr_hero-photo"
-              width={700}
-              height={650}
+              width={600}
+              height={600}
+              className="img-fluid"
             />
           </div>
         </section>

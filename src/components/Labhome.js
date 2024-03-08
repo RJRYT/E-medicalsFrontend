@@ -33,7 +33,7 @@ function Labhome() {
       {/* <button className="rjr_button rjr_btn-primary">Consult today</button> */}
     </div>
     <div className="rjr_hero-img mt-5">
-      <img src={illustration} alt="rjr_hero-photo" width={700} height={650}/>
+      <img src={illustration} alt="rjr_hero-photo" className='img-fluid' width={600} height={600}/>
     </div>
   </section>
   </div>

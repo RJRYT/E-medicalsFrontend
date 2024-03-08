@@ -232,7 +232,7 @@ footer {
 
 * {
   margin: 0;
-  box-sizing: inherit !important;
+  /* box-sizing: inherit !important; */
   outline: 0;
   font-family: 'Mulish', sans-serif;
 }
