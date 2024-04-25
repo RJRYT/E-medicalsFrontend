@@ -55,14 +55,14 @@ function UserNavbar() {
               Bookings
             </Link>
             <div class="dropdown-menu rounded-0 m-0">
-              <Link to="/user_approved_bookings" class="dropdown-item">
+              {/* <Link to="/user_approved_bookings" class="dropdown-item">
                 Approved Bookings
-              </Link>
+              </Link> */}
               <Link to="/user_pending_bookings" class="dropdown-item">
-                Pending Booking
+                Lab
               </Link>
               <Link to="/user_view_appointment/today" class="dropdown-item">
-                Appointments
+                Doctor
               </Link>
             </div>
           </div>

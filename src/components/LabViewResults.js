@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
+import img from '../Assets/verified.jpg'
 
-function LabViewResults() {
+
+function LabViewResults() { 
 
   const navigate=useNavigate()
   useEffect(() => {
@@ -120,17 +122,22 @@ function LabViewResults() {
         </table>
       </div>
       <div className="lab_view_result_variations">
-        <p
-          className={
-            data.comments ==
-            "Please consult a doctor as you have some variations with your reports."
-              ? `fs-5 text-center pt-3 text-danger`
-              : "fs-5 text-center pt-3 text-success"
-          }
-        >
-          {data.comments}
-        </p>
-      </div>
+            {
+              data.drReviwed == false ?<p
+              className={
+                data.comments ==
+                "Please consult a doctor as you have some variations with your reports."
+                  ? `fs-5 text-center pt-3 text-danger`
+                  : "fs-5 text-center pt-3 text-success"
+              }
+            >
+              {data.comments}
+            </p>:<div className="verified_img">
+            <img src={img}/><p>Verified by Doctor</p>
+          </div>
+            }
+            
+          </div>
     </div>
   );
 }

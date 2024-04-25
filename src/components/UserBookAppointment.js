@@ -76,6 +76,8 @@ function UserBookAppointment() {
               style={{ marginTop: "7rem" }}
             >
               <div className="row">
+              <h1 class="mb-4">OP Fees - <span id='blue_clr' >₹ 100</span></h1>
+
                 <div class="col-md-4">Choose a Date</div>
                 <div class="col-md-8">
                   <input

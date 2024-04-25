@@ -20,7 +20,7 @@ function AdminNavbar() {
           </a>
         </div>
         <div className="rjr_nav-links rjr_flex">
-          <Link to="/admin_home" className="rjr_a ">
+          <Link to="/admin_dashboard" className="rjr_a ">
             Home
           </Link>
          
@@ -33,6 +33,15 @@ function AdminNavbar() {
               View
             </Link>
             <div class="dropdown-menu rounded-0 m-0">
+              <Link to="/admin_home" class="dropdown-item">
+                Users
+              </Link>
+              <Link to="/admin_view_hospitals_req" class="dropdown-item">
+                Hospital requests
+              </Link>
+              <Link to="/admin_view_hospitals" class="dropdown-item">
+                Hospitals
+              </Link>
               <Link to="/admin_view_doctors" class="dropdown-item">
                 Doctors
               </Link>

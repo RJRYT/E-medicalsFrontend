@@ -47,13 +47,16 @@ function UserViewApprovedBookings() {
     <div>
       <div class="container-xxl py-5 mt-3">
         <div class="container" style={{ minHeight: "400px" }}>
-          <h1
-            class="text-center  mb-5 wow fadeInUp"
-            id="blue_clr"
-            data-wow-delay="0.1s"
-          >
-            Approved Bookings
-          </h1>
+        <div className="user_appointment mb-4">
+            <Link
+              to={"/user_pending_bookings"}
+              
+            >
+              Pending Bookings
+            </Link>
+            <Link className="fw-bold"
+              id="blue_clr" to={"/user_approved_bookings"}>Approved Bookings</Link>
+          </div>
           <div class="row g-4">
             {array.length ? (
               array.map((a, index) => {

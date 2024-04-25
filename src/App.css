@@ -593,7 +593,9 @@ flex-wrap: wrap;
 }
 
 .lab_view_result{
-  margin: 50px 0;
+  margin-bottom: 50px;
+  min-height: 900px;
+  padding: 50px 20px;
 }
 .lab_view_result_patient_title p{
   font-size: 18px;
@@ -669,6 +671,24 @@ flex-wrap: wrap;
   5% {left: -5px}
   6% {left: 3px}
   7% {left: 0}
+}
+
+.verified_img{
+  display: flex;
+  height: 80px;
+  width: 250px;
+  margin:  auto;
+  align-items: center;
+}
+
+.verified_img p{
+  margin: 0;
+  font-size: 18px;
+}
+.verified_img img{
+  height: 80px;
+  width: 80px;
+  /* margin: auto; */
 }
 
 

@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import LandingNavbar from './LandingNavbar';
 
 function PharmacyLogin() {
 
     const navigate=useNavigate();
+
+    useEffect(() => {
+      if(localStorage.getItem('pharmacyid')!==null){
+        navigate('/pharmacy_home')
+      }
+    });
+
     const[loginData,setLogin]=useState({
         email:'',
         password:''
@@ -35,7 +42,7 @@ function PharmacyLogin() {
       <div className="user_log">
         <LandingNavbar />
         <div className="user_log_box">
-          <p className="user_log_box_title mb-5">Login</p>
+          <p className="user_log_box_title mb-5">Pharmacy Login</p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
             <input 

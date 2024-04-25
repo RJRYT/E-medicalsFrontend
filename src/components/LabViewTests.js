@@ -44,7 +44,10 @@ function LabViewTests() {
             if(res.data.status==200){
                 alert('Removed')
                 setArray(prevArray => prevArray.filter(item => item._id !== id));
-            }
+            }else if(res.data.status==405){
+                alert(res.data.msg)
+  
+              }
           })
           .catch((err) => {
             console.log(err);
@@ -69,7 +72,7 @@ function LabViewTests() {
                             <h6 class="mb-3 ">{a.price}</h6>
                             <h6 class="mb-3 ">{a.comments}</h6>
                         <Link class="btn btn-success py1 px3 mt-3 " to={`/lab_edit_test/${a._id}`} style={{marginRight:'3px'}} >Edit</Link>
-                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link> */}
+                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link>
                         </div>
                     </div> 
                             )

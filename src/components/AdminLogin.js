@@ -4,6 +4,13 @@ import { useNavigate } from 'react-router-dom';
 function AdminLogin() {
 
     const navigate=useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem('adminid')!==null){
+          navigate('/admin_dashboard')
+        }
+      });
+
     const[login,setLogin]=useState({
         name:'',
         password:''
@@ -24,7 +31,7 @@ function AdminLogin() {
         if(login.name=='admin' && login.password=='admin123'){
            localStorage.setItem('adminid',1)        
            alert('Login successfully')         
-          navigate("/admin_home")
+          navigate("/admin_dashboard")
         }else{
             alert('Login failed')         
 

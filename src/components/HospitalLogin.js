@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../BaseUrls';
 import EmptyNavbar from './EmptyNavbar';
@@ -12,6 +12,12 @@ function HospitalLogin() {
       });
     
       const navigate=useNavigate()
+
+      useEffect(() => {
+        if(localStorage.getItem('hospitalid')!==null){
+          navigate('/hospital_home')
+        }
+      });
     
       const handleChange = (e) => {
         const { name, value } = e.target;

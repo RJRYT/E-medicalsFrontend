@@ -166,7 +166,7 @@ function PharmacyAddMedicine() {
                     <div class="col-6 form-group mb-2">
                       <input
                         name="dosage"
-                        type="text"
+                        type="number"
                         class="form-control"
                         placeholder="Dosage"
                         value={values.dosage}

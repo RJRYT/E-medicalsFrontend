@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import axiosInstance from '../BaseUrls';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axiosInstance from "../BaseUrls";
+import img from '../Assets/verified.jpg'
 
 function DoctorViewUserTestDetails() {
-
-    const { id } = useParams();
+  const { id } = useParams();
   const [data, setData] = useState({ userid: { dob: "" }, testid: {} });
   const [testDetails, setTestDetails] = useState([]);
-  const [resultDetails, setResultDetails] = useState([]);
+  const [resultDetails, setResultDetails] = useState([]); 
+
+  const navigate=useNavigate();
 
   useEffect(() => {
     axiosInstance
@@ -23,6 +25,21 @@ function DoctorViewUserTestDetails() {
       });
   }, []);
   let combinedArray;
+
+  const handleApprove = (id) => {
+    axiosInstance
+      .post(`/reviewResultByDr/${data._id}`)
+      .then((res) => {
+        console.log(res);
+        if (res.data.status == 200) {
+          alert("Approved");
+          navigate(-1)
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="container lab_view_result">
@@ -113,19 +130,20 @@ function DoctorViewUserTestDetails() {
         </table>
       </div>
       <div className="lab_view_result_variations">
-        <p
-          className={
-            data.comments ==
-            "Please consult a doctor as you have some variations with your reports."
-              ? `fs-5 text-center pt-3 text-danger`
-              : "fs-5 text-center pt-3 text-success"
-          }
-        >
-          {data.comments}
-        </p>
+        {data.drReviwed == false ? (
+          <div className="text-center">
+            {" "}
+            <button className="btn btn-info" onClick={()=>{handleApprove()}} >Verify now</button>
+          </div>
+        ) : (
+
+          <div className="verified_img">
+            <img src={img}/><p>Verified by Doctor</p>
+          </div>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default DoctorViewUserTestDetails
+export default DoctorViewUserTestDetails;

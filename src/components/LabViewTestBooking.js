@@ -74,7 +74,7 @@ function LabViewTestBooking() {
                             <Link
                               to={`/lab_add_result/${a._id}/${a.testid._id}/${a.userid._id}`}
                             >
-                              <button class="btn" id="btns_bg">
+                              <button class="btn btn-success" >
                                 Add Result
                               </button>
                             </Link>

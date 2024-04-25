@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrls";
 import "./UserViewPrescription.css";
 import img from "../Assets/img/doc_logo.png";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 function UserViewPrescription() {
   const { id } = useParams();
+  const navigate=useNavigate();
   const [data, setData] = useState({ doctorid: {}, userid: {}, date: "" });
   const [medications, setMedications] = useState([]);
   const [hospital, setDoctor] = useState({});
-
-
+  const [availableMedicines, setAvailableMedicines] = useState([]);
+  const [pharmacyPrice, setPharmacyPrice] = useState(0);
 
   useEffect(() => {
     axiosInstance
@@ -43,13 +46,93 @@ function UserViewPrescription() {
 
   console.log(hospital);
 
+  // const sendPrescription = () => {
+  //   axiosInstance
+  //     .post(`/sharePrescriptionTionToPharmacy/${data._id}`)
+  //     .then((res) => {
+  //       console.log(res);
+  //       if (res.data.status == 200) {
+  //         setAvailableMedicines(res.data.medicationAvailability)
+  //         setPharmacyPrice(res.data.price)
+  //         navigate('/user_view_available_med_by_pharmacy')
+  //         alert("Shared to Pharmacy");
+  //       } else {
+  //         alert("Data not Updated");
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+  const sendPrescription = () => {
+    axiosInstance
+      .post(`/sharePrescriptionTionToPharmacy/${data._id}`)
+      .then((res) => {
+        console.log(res);
+        if (res.data.status == 200) {
+          setAvailableMedicines(res.data.medicationAvailability)
+          setPharmacyPrice(res.data.price)
+          navigate('/user_view_available_med_by_pharmacy', { state: { availableMedicines: res.data.medicationAvailability, pharmacyPrice: res.data.price,data:data } });
+        } else {
+          alert("Data not Updated");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
+
+  const handleDownloadClick = () => {
+    const divToDownload = document.getElementById("divToDownload");
+
+    html2canvas(divToDownload).then((canvas) => {
+      canvas.toBlob((blob) => {
+        saveAs(blob, "Prescription.png");
+      });
+    });
+  };
+
   return (
     <div>
-      <div className="user_prescription">
-        <div className="container">
+      <div className="container mt-5">
+        {data.pharmacyNeeded == false ? (
           <div className="user_prescription_link">
-            <button className="btn" id="btns_bg" >Send to Pharmacy</button>
+            <button
+              className="btn"
+              id="btns_bg"
+              onClick={() => {
+                sendPrescription();
+              }}
+            >
+              Send to Pharmacy
+            </button>
+            <button
+              className="btn btn-success mx-2"
+              onClick={handleDownloadClick}
+            >
+              Download
+            </button>
           </div>
+        ) : (
+          <div className="user_prescription_link">
+            <Link to={`/user_view_invoice/${data._id}`} >
+              <button className="btn" id="btns_bg">
+                View Invoice
+              </button>
+            </Link>
+            <button
+              className="btn btn-success mx-2"
+              onClick={handleDownloadClick}
+            >
+              Download
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="user_prescription" id="divToDownload">
+        <div className="container">
           <div className="user_prescription_head">
             <div className="user_prescription_head_left">
               <img src={img} alt="doc_icon" />

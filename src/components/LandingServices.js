@@ -50,7 +50,7 @@ function LandingServices() {
         <p className='rjr_p'>Track and save your medical history and health data</p>
     </div>
     </div>
-    <div className="rjr_btn-secondary rjr_btn-center">Learn more</div>
+    {/* <div className="rjr_btn-secondary rjr_btn-center">Learn more</div> */}
   </section>
     </div>
   )

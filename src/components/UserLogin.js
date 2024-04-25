@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./UserLogin.css";
 import EmptyNavbar from "./EmptyNavbar";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,10 +8,16 @@ import LandingNavbar from "./LandingNavbar";
 function UserLogin() {
   const [loginData, setLoginData] = useState({
     email: "",
-    password: "",
+    password: "", 
   });
 
   const navigate=useNavigate()
+
+  useEffect(() => {
+    if(localStorage.getItem('userid')!==null){
+      navigate('/user_home')
+    }
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;

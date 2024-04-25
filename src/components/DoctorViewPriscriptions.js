@@ -11,7 +11,7 @@ function DoctorViewPriscriptions() {
         axiosInstance.post(`/viewPrescriptionByDrId/${id}`)
         .then((response)=>{
             console.log(response);
-            if(response.data.msg=='No appointments for today'){
+            if(response.data.msg=='No Data obtained '){
                 setArray([])
 
             }else if(response.data.status==200){

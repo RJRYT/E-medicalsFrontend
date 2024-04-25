@@ -4,11 +4,11 @@ const axiosInstance = axios.create({
 
   //server api
 
-  // baseURL: '', 
+  // baseURL: 'http://hybrid.srishticampus.in:4005/emedicals_api/', 
 
 //local api
 
-  baseURL: 'http://localhost:4005/emedicals', 
+  baseURL: 'http://localhost:4005/emedicals_api', 
 
   headers: {
     'Content-Type': 'application/json',

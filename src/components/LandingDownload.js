@@ -14,7 +14,7 @@ function LandingDownload() {
         web portal allow you to access information instantaneously (no tedeous form, long calls, 
         or administrative hassle) and securely
       </p>
-      <div className="rjr_btn-secondary">Download<span><i className="fa-solid fa-arrow-down-long"></i></span></div>
+      {/* <div className="rjr_btn-secondary">Download<span><i className="fa-solid fa-arrow-down-long"></i></span></div> */}
     </div>
     <div className="rjr_hero-img">
       <img src={illustration} className="img-fluid" alt="photo" />

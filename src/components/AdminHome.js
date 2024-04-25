@@ -42,6 +42,10 @@ function AdminHome({url}) {
             if(res.data.status==200){
                 alert('Removed')
                 setArray(prevArray => prevArray.filter(item => item._id !== id));
+                localStorage.removeItem('userid');
+            }else if(res.data.status==405){
+              alert(res.data.msg)
+
             }
           })
           .catch((err) => {
@@ -84,7 +88,7 @@ function AdminHome({url}) {
                         <h6 class="mb-3 ">{a.email}</h6>
                         <h6 class="mb-3 ">{a.contact}</h6>
                         <div className="d-flex" >
-                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link> */}
+                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link>
                         </div>
                         
                         {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}   >Remove</Link> */}
@@ -94,7 +98,7 @@ function AdminHome({url}) {
                 );
               })
             ) : (
-              <h3 style={{ padding: "30px" }}>No Doctors Found</h3>
+              <h3 style={{ padding: "30px" }}>No Users Found</h3>
             )}
           </div>
         </div>

@@ -8,7 +8,7 @@ function UserViewHospitals({url}) {
 
   useEffect(() => {
     axiosInstance
-      .post(`/viewHospitals`)
+      .post(`/viewApprovedHospitals`)
       .then((response) => {
         console.log(response);
         if (response.data.msg == "No Data obtained ") {

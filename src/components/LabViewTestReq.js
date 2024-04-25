@@ -34,7 +34,7 @@ function LabViewTestReq() {
       .then((res) => {
         console.log(res);
         if (res.data.status == 200) {
-          alert("Removed");
+          alert("Approved");
           setArray((prevArray) => prevArray.filter((item) => item._id !== id));
         }
       })

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EmptyNavbar from './EmptyNavbar'
 import { useNavigate } from 'react-router-dom';
 import LandingNavbar from './LandingNavbar';
@@ -6,6 +6,13 @@ import LandingNavbar from './LandingNavbar';
 function LabLogin() {
 
     const navigate=useNavigate();
+
+    useEffect(() => {
+      if(localStorage.getItem('labid')!==null){
+        navigate('/lab_home')
+      }
+    });
+
     const[loginData,setLogin]=useState({
         email:'',
         password:''

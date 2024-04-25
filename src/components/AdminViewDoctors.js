@@ -35,6 +35,10 @@ function AdminViewDoctors({url}) {
         if(res.data.status==200){
             alert('Removed')
             setArray(prevArray => prevArray.filter(item => item._id !== id));
+            localStorage.removeItem('doctorid');
+        }else if(res.data.status==405){
+          alert(res.data.msg)
+
         }
       })
       .catch((err) => {
@@ -78,7 +82,7 @@ function AdminViewDoctors({url}) {
                         <h6 class="mb-3 ">{a.experience} Year Experience</h6>
                         <h6 class="mb-3 ">{a.contact}</h6>
                         <div className="d-flex" >
-                        {/* <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link> */}
+                        <Link class="btn btn-danger py1 px3 mt-3 " onClick={() => handleRemove(a._id)}  >Remove</Link>
                         </div>
                         
                       </div>

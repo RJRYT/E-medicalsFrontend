@@ -15,7 +15,7 @@ function LandingProvider() {
         Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone. To us, it’s not just work. We take pride 
         in the solutions we deliver
       </p>
-      <div className="rjr_btn-secondary">Learn more</div>
+      {/* <div className="rjr_btn-secondary">Learn more</div> */}
     </div>
   </section>
     </div>

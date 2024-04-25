@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../BaseUrls';
 import LandingNavbar from './LandingNavbar';
@@ -11,6 +11,12 @@ function DoctorLogin() {
       });
     
       const navigate=useNavigate()
+
+      useEffect(() => {
+        if(localStorage.getItem('doctorid')!==null){
+          navigate('/doctor_home')
+        }
+      });
     
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -48,7 +54,7 @@ function DoctorLogin() {
       <div className="user_log">
         <LandingNavbar />
         <div className="user_log_box">
-          <p className="user_log_box_title mb-5">Login</p>
+          <p className="user_log_box_title mb-5">Doctor Login</p>
           <form onSubmit={handleLogin} >
             <div className="user_log_inp_box mt-3">
             <input 

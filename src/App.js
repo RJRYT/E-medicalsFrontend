@@ -72,15 +72,26 @@ import DoctorViewPatientPrescription from "./components/DoctorViewPatientPrescri
 import UserViewPrescription from "./components/UserViewPrescription";
 import DoctorViewPriscriptions from "./components/DoctorViewPriscriptions";
 import UserPrescriptions from "./components/UserPrescriptions";
+import PharmacyViewPrescriptionReq from "./components/PharmacyViewPrescriptionReq";
+import UserViewBookings from "./components/UserViewBookings";
+import UserViewAvailableMedByPharmacy from "./components/UserViewAvailableMedByPharmacy";
+import UserViewInvoice from "./components/UserViewInvoice";
+import PharmacyViewInvoice from "./components/PharmacyViewInvoice";
+import AdminViewHospitals from "./components/AdminViewHospitals";
+import AdminDashboard from "./components/AdminDashboard";
+import AdminViewHospitalReq from "./components/AdminViewHospitalReq";
 
 
 function App() {
 
-  //image_url
-  const url='http://localhost:4005'
+  //image_url_local
+  const url='http://localhost:4005' 
+
+  //image_url_server
+  // const url='http://hybrid.srishticampus.in:4005/'
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="emedicals" >
     <div>
       <Routes>
         <Route path="/" element={[<LandingNavbar/>,<MyFile/>]} />
@@ -93,8 +104,8 @@ function App() {
         <Route path="/user_view_test" element={[<UserNavbar/>,<UserViewTests />]} />
         <Route path="/user_book_test/:id" element={[<UserNavbar/>,<UserBookTest />]} />
         <Route path="/user_payment/:id/:value/:price" element={[<UserNavbar/>,<UserPayment/>]}/>
-        <Route path="/user_pending_bookings" element={[<UserNavbar/>,<UserViewPendingBookings/>]}/>
-        <Route path="/user_approved_bookings" element={[<UserNavbar/>,<UserViewApprovedBookings/>]}/>
+        <Route path="/user_pending_bookings" element={[<UserNavbar/>,<UserViewBookings data='pending' />]}/>
+        <Route path="/user_approved_bookings" element={[<UserNavbar/>,<UserViewBookings data='approved'/>]}/>
         <Route path="/user_view_result/:id" element={[<UserNavbar/>,<UserViewResult/>]}/>
         <Route path="/user_view_hospital" element={[<UserNavbar/>,<UserViewHospitals url={url} />]}/>
         <Route path="/user_view_doctors/:id" element={[<UserNavbar/>,<UserViewDoctors url={url} />]}/>
@@ -104,6 +115,8 @@ function App() {
         <Route path="/user_view_appointment/dateover" element={[<UserNavbar/>,<UserViewAppointments data='dateover' />]}/>
         <Route path="/user_prescriptions" element={[<UserNavbar/>,<UserPrescriptions />]}/>
         <Route path="/user_view_prescription/:id" element={[<UserNavbar/>,<UserViewPrescription />]}/>
+        <Route path="/user_view_available_med_by_pharmacy" element={[<UserNavbar/>,<UserViewAvailableMedByPharmacy />]}/>
+        <Route path="/user_view_invoice/:id" element={[<UserNavbar/>,<UserViewInvoice />]}/>
 
 
         <Route path="/hospital_registration" element={[<HospitalRegistration />]} />
@@ -129,15 +142,20 @@ function App() {
 
 
         <Route path="/admin" element={[<AdminLogin />]} />
+        <Route path="/admin_dashboard" element={[<AdminNavbar/>,<AdminDashboard />]} />
         <Route path="/admin_home" element={[<AdminNavbar/>,<AdminHome url={url} />]} />            
         <Route path="/admin_view_doctors" element={[<AdminNavbar/>,<AdminViewDoctors url={url} />]} />
         <Route path="/admin_view_tests" element={[<AdminNavbar/>,<AdminViewTests  />]} />
+        <Route path="/admin_view_hospitals" element={[<AdminNavbar/>,<AdminViewHospitals url={url} />]} />
+        <Route path="/admin_view_hospitals_req" element={[<AdminNavbar/>,<AdminViewHospitalReq url={url} />]} />
 
 
         <Route path="/pharmacy_login" element={[<PharmacyLogin />]} />
         <Route path="/pharmacy_home" element={[<PharmacyNavbar/>,<PharmacyHome />]} />
         <Route path="/pharmacy_add_medicine" element={[<PharmacyNavbar/>,<PharmacyAddMedicine />]} />
         <Route path="/pharmacy_view_medicine" element={[<PharmacyNavbar/>,<PharmacyViewMedicines url={url} />]} />
+        <Route path="/pharmacy_view_prescription_req" element={[<PharmacyNavbar/>,<PharmacyViewPrescriptionReq />]} />
+        <Route path="/pharmacy_view_invoice/:id" element={[<PharmacyNavbar/>,<PharmacyViewInvoice />]} />
 
 
         <Route path="/doctor_login" element={[<DoctorLogin />]} />
@@ -149,10 +167,6 @@ function App() {
         <Route path="/doctor_add_prescription/:id/:uid" element={[<DoctorNavbar/>,<DoctorAddPrescription  />]} />
         <Route path="/doctor_view_patient_prescription/:id" element={[<DoctorNavbar/>,<DoctorViewPatientPrescription  />]} />
         <Route path="/doctor_view_prescription" element={[<DoctorNavbar/>,<DoctorViewPriscriptions  />]} />
-
-
-
-
 
       </Routes>
       <Footer/>

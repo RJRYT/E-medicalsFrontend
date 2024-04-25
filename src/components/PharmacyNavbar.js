@@ -21,6 +21,7 @@ function PharmacyNavbar() {
       </div>
       <div className="rjr_nav-links rjr_flex">
         <Link to='/pharmacy_home' className="rjr_a ">Home</Link>
+        <Link to='/pharmacy_view_prescription_req' class="rjr_a">Prescription Req</Link>
         <div class="nav-item dropdown">
                    <Link href="#" class=" dropdown-toggle rjr_a" data-bs-toggle="dropdown">Medicines</Link>
                    <div class="dropdown-menu rounded-0 m-0">
