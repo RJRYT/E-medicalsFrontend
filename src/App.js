@@ -91,7 +91,7 @@ function App() {
   // const url='http://hybrid.srishticampus.in:4005/'
 
   return (
-    <BrowserRouter basename="emedicals" >
+    <BrowserRouter >
     <div>
       <Routes>
         <Route path="/" element={[<LandingNavbar/>,<MyFile/>]} />

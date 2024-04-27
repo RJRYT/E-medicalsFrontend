@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 //local api
 
-  baseURL: 'http://localhost:4005/emedicals_api', 
+  baseURL: 'http://localhost:4005/emedicals', 
 
   headers: {
     'Content-Type': 'application/json',
