@@ -20,7 +20,7 @@ function MyFile() {
   
 
   return (
-    <div>
+    <div style={{paddingTop:"10px"}}>
       <LandingCarousel/>
       <LandingServices/>
       <LandingProvider/>
